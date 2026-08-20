@@ -1,0 +1,33 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - gymhub-network
+
+  backend:
+    build: ./backend
+    environment:
+      - MongoDb__ConnectionString=mongodb://mongo:27017
+      - MongoDb__DatabaseName=GymHubDb
+    depends_on:
+      - mongo
+    networks:
+      - gymhub-network
+
+  mongo:
+    image: mongo:7
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - gymhub-network
+
+networks:
+  gymhub-network:
+    driver: bridge
+
+volumes:
+  mongo-data:

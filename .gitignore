@@ -1,0 +1,20 @@
+# D:\myapp\.gitignore
+
+# Dependencies
+**/node_modules
+**/bin
+**/obj
+
+# Build output
+**/dist
+
+# Env files with real values
+.env
+frontend/.env.development
+frontend/.env.production
+
+# Editor/OS junk
+.vs/
+.vscode/
+*.user
+Thumbs.db

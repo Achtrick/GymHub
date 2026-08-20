@@ -1,0 +1,27 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      target: build # stop at the build stage, skip Nginx entirely for dev
+    command: npm run dev -- --host 0.0.0.0
+    ports:
+      - "5173:5173" # Vite's dev server port
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules # prevents host node_modules from overwriting container's
+    environment:
+      - CHOKIDAR_USEPOLLING=true # file-watching reliability on Windows/WSL2
+
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ./backend:/src
+    command: dotnet watch --project GymHub.Api run --urls http://0.0.0.0:8080
+
+  mongo:
+    ports:
+      - "27017:27017"
