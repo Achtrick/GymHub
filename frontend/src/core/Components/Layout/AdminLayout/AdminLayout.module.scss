@@ -1,0 +1,85 @@
+$admin-breakpoint: 880px;
+
+.adminLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+
+  @media (max-width: $admin-breakpoint) {
+    flex-direction: column;
+  }
+}
+
+.topbar {
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: 56px;
+  flex-shrink: 0;
+  padding: 0 1rem;
+  background-color: var(--second-color);
+
+  @media (max-width: $admin-breakpoint) {
+    display: flex;
+  }
+}
+
+.menuButton {
+  background: transparent;
+  padding: 0.4rem;
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  &:hover {
+    opacity: 1;
+    background-color: color-mix(in srgb, var(--white-color) 10%, transparent);
+  }
+}
+
+.topbarBrand {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--white-color);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.85;
+  }
+
+  span {
+    color: var(--first-color);
+  }
+}
+
+.backdrop {
+  display: none;
+
+  @media (max-width: $admin-breakpoint) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 35;
+    background-color: rgba(20, 24, 31, 0.5);
+  }
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  padding: 2.5rem;
+
+  @media (max-width: $admin-breakpoint) {
+    padding: 1.25rem 1rem 2rem;
+  }
+}

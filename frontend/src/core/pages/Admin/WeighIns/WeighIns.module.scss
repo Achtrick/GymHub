@@ -1,0 +1,86 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.subtitle {
+  color: var(--muted-color);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.hint,
+.error {
+  color: var(--muted-color);
+}
+
+.error {
+  color: var(--danger-color);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: calc(var(--radius) * 1.2);
+  overflow: hidden;
+}
+
+.photo {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  display: block;
+  background-color: #000;
+}
+
+.body {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lifter {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.weightBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--first-color);
+  background-color: color-mix(in srgb, var(--first-color) 12%, transparent);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.approve,
+.reject {
+  flex: 1;
+}
+
+.reject {
+  background-color: transparent;
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--danger-color) 10%, transparent);
+    opacity: 1;
+  }
+}

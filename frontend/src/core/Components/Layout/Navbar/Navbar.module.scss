@@ -1,6 +1,108 @@
 .navbar {
   width: 100%;
   height: var(--navbar-height);
-  background-color: var(--black-color);
-  color: var(--white-color);
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--second-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: var(--second-color);
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  span {
+    color: var(--first-color);
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile {
+  position: relative;
+}
+
+.avatarButton {
+  padding: 0;
+  background: transparent;
+  border-radius: 999px;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 220px;
+  background-color: color-mix(in srgb, var(--surface-color) 72%, transparent);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--border-color);
+  border-radius: calc(var(--radius) * 1.2);
+  box-shadow: 0 8px 24px rgba(20, 24, 31, 0.12);
+  padding: 0.5rem;
+  z-index: 20;
+}
+
+.menuHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.5rem 0.65rem 0.65rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.menuName {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.menuEmail {
+  font-size: 0.8rem;
+  color: var(--muted-color);
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  background: transparent;
+  color: var(--second-color);
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: var(--radius);
+
+  svg {
+    width: 17px;
+    height: 17px;
+    color: var(--muted-color);
+  }
+
+  &:hover {
+    opacity: 1;
+    background-color: var(--bg-color);
+  }
+
+  &:active {
+    transform: none;
+  }
 }

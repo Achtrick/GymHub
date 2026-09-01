@@ -1,0 +1,74 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1.5rem 4rem;
+  background-color: var(--bg-color);
+}
+
+.card {
+  width: 100%;
+  max-width: 720px;
+}
+
+.back {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--muted-color);
+  margin-bottom: 1.5rem;
+
+  &:hover {
+    color: var(--first-color);
+  }
+}
+
+.brand {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+
+  span {
+    color: var(--first-color);
+  }
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+.updated {
+  color: var(--muted-color);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.05rem;
+  margin: 2rem 0 0.75rem;
+}
+
+p,
+li {
+  color: var(--second-color);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+p {
+  margin-bottom: 0.9rem;
+}
+
+ul {
+  margin: 0 0 0.9rem;
+  padding-left: 1.4rem;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+strong {
+  font-weight: 600;
+}

@@ -1,0 +1,273 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.back {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--muted-color);
+  padding: 1rem 1rem 0.5rem;
+
+  &:hover {
+    color: var(--first-color);
+  }
+}
+
+.empty {
+  color: var(--muted-color);
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.videoWrap {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: #000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.video {
+  width: 100%;
+  max-height: 65vh;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  display: block;
+  background-color: #000;
+}
+
+.body {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 calc(var(--radius) * 1.2) calc(var(--radius) * 1.2);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.lifter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-width: 0;
+  color: var(--second-color);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--first-color);
+  }
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.liftBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--first-color);
+  background-color: color-mix(in srgb, var(--first-color) 12%, transparent);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--second-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  &:hover {
+    opacity: 0.7;
+    background: transparent;
+  }
+
+  &:active {
+    transform: none;
+  }
+}
+
+.liked {
+  color: var(--first-color);
+}
+
+.commentCountLabel {
+  font-size: 0.85rem;
+  color: var(--muted-color);
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hint {
+  color: var(--muted-color);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.commentThread {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  font-size: 0.85rem;
+  line-height: 1.4;
+
+  strong {
+    font-weight: 600;
+    margin-right: 0.35rem;
+  }
+}
+
+.mention {
+  color: var(--first-color);
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.commentMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0.1rem 0 0.35rem;
+}
+
+.replyButton,
+.deleteButton {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted-color);
+
+  &:hover {
+    color: var(--first-color);
+    background: transparent;
+  }
+
+  &:active {
+    transform: none;
+  }
+}
+
+.deleteButton:hover {
+  color: #e5484d;
+}
+
+.reply {
+  display: flex;
+  flex-direction: column;
+  margin: 0.4rem 0 0.35rem 1.5rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--border-color);
+}
+
+.highlighted {
+  animation: highlight-flash 2.5s ease-out;
+  border-radius: var(--radius);
+}
+
+@keyframes highlight-flash {
+  0% {
+    background-color: color-mix(in srgb, var(--first-color) 18%, transparent);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.commentForm {
+  margin-top: 0.5rem;
+}
+
+.composer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.composerRow {
+  display: flex;
+  gap: 0.5rem;
+
+  button {
+    padding: 0.5rem 1rem;
+    flex-shrink: 0;
+  }
+}
+
+.replyingTo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--muted-color);
+  background-color: var(--bg-color);
+  border-radius: var(--radius);
+  padding: 0.35rem 0.6rem;
+
+  button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: var(--first-color);
+    font-weight: 600;
+    font-size: 0.75rem;
+
+    &:hover {
+      background: transparent;
+      opacity: 0.75;
+    }
+
+    &:active {
+      transform: none;
+    }
+  }
+}

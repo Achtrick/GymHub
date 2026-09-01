@@ -13,6 +13,18 @@ services:
     environment:
       - MongoDb__ConnectionString=mongodb://mongo:27017
       - MongoDb__DatabaseName=GymHubDb
+      - Jwt__Secret=${JWT_SECRET}
+      - Google__ClientId=${GOOGLE_CLIENT_ID}
+      - Stripe__SecretKey=${STRIPE_SECRET_KEY}
+      - Email__Host=${SMTP_HOST}
+      - Email__Port=${SMTP_PORT}
+      - Email__Username=${SMTP_USERNAME}
+      - Email__Password=${SMTP_PASSWORD}
+      - Email__FromAddress=${SMTP_FROM_ADDRESS}
+      - Email__FromName=${SMTP_FROM_NAME}
+      - Email__UseStartTls=${SMTP_USE_STARTTLS}
+    volumes:
+      - backend-uploads:/app/uploads
     depends_on:
       - mongo
     networks:
@@ -31,3 +43,4 @@ networks:
 
 volumes:
   mongo-data:
+  backend-uploads:

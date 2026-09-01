@@ -1,0 +1,14 @@
+.userLayout {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}

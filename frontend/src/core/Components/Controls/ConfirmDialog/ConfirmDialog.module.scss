@@ -1,0 +1,33 @@
+.message {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--second-color);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.cancel {
+  background-color: transparent;
+  color: var(--second-color);
+  border: 1px solid var(--border-color);
+
+  &:hover {
+    opacity: 1;
+    background-color: var(--bg-color);
+  }
+}
+
+.confirm {
+  background-color: var(--first-color);
+  color: var(--white-color);
+}
+
+.danger {
+  background-color: var(--danger-color);
+  color: var(--white-color);
+}

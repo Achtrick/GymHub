@@ -1,0 +1,130 @@
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.empty {
+  color: var(--muted-color);
+  font-size: 0.85rem;
+}
+
+.plotArea {
+  position: relative;
+}
+
+.svg {
+  width: 100%;
+  height: 120px;
+  display: block;
+  touch-action: none;
+}
+
+.gridline {
+  stroke: var(--border-color);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.line {
+  fill: none;
+  stroke: var(--first-color);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.crosshair {
+  stroke: var(--muted-color);
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.dot {
+  fill: var(--first-color);
+  stroke: var(--surface-color);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -100%);
+  background-color: var(--second-color);
+  color: var(--white-color);
+  border-radius: var(--radius);
+  padding: 0.35rem 0.6rem;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.05rem;
+  white-space: nowrap;
+  pointer-events: none;
+
+  strong {
+    font-size: 0.8rem;
+  }
+
+  span {
+    opacity: 0.75;
+  }
+}
+
+.axisLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--muted-color);
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--muted-color);
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.latest {
+  font-weight: 700;
+  color: var(--second-color);
+}
+
+.tableToggle {
+  align-self: flex-start;
+  background: transparent;
+  color: var(--muted-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0;
+
+  &:hover {
+    color: var(--first-color);
+    background: transparent;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+
+  th,
+  td {
+    text-align: left;
+    padding: 0.4rem 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  th {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted-color);
+  }
+}

@@ -1,0 +1,162 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.subtitle {
+  color: var(--muted-color);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.hint {
+  color: var(--muted-color);
+}
+
+.error {
+  color: var(--danger-color);
+}
+
+.summary {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted-color);
+  margin-bottom: 0.75rem;
+}
+
+// The table needs roughly 820px to lay out its 7 columns without forcing
+// horizontal scroll — below that, show cards instead.
+$table-breakpoint: 820px;
+
+.tableWrap {
+  overflow-x: auto;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: calc(var(--radius) * 1.2);
+
+  @media (max-width: $table-breakpoint) {
+    display: none;
+  }
+}
+
+.table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+
+  th,
+  td {
+    text-align: left;
+    padding: 0.75rem 0.9rem;
+    white-space: nowrap;
+  }
+
+  th {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  tbody tr:not(:last-child) td {
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+.muted {
+  color: var(--muted-color);
+}
+
+.address {
+  white-space: normal;
+  max-width: 220px;
+}
+
+.statusSelect {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.received {
+  color: #9a6700;
+  background-color: color-mix(in srgb, #9a6700 12%, transparent);
+}
+
+.in_shipping {
+  color: #1c6ddb;
+  background-color: color-mix(in srgb, #1c6ddb 12%, transparent);
+}
+
+.shipped {
+  color: #1a7f37;
+  background-color: color-mix(in srgb, #1a7f37 12%, transparent);
+}
+
+.cardList {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  @media (max-width: $table-breakpoint) {
+    display: flex;
+  }
+}
+
+.orderCard {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: calc(var(--radius) * 1.2);
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.orderCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.customerName {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.orderFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.orderField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  span {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted-color);
+  }
+
+  strong {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+}
+
+.orderFieldFull {
+  grid-column: 1 / -1;
+}

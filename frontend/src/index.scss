@@ -4,8 +4,110 @@
 }
 
 :root {
-  --orange-color: #ff4d00;
-  --black-color: #222222;
-  --white-color: #fafafafa;
-  --navbar-height: 60px;
+  // Brand
+  --first-color: #ff4d00;
+  --second-color: #14181f;
+
+  // Neutrals
+  --bg-color: #fafafa;
+  --surface-color: #ffffff;
+  --border-color: #e6e6e9;
+  --muted-color: #767a82;
+  --white-color: #ffffff;
+  --danger-color: #d33636;
+
+  // Type
+  --font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+
+  // Layout
+  --navbar-height: 64px;
+  --sidebar-width: 240px;
+  --radius: 10px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--second-color);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--first-color);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.65rem 1.25rem;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  transition:
+    opacity 0.15s ease,
+    transform 0.05s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--second-color);
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.85rem;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+
+  &:focus {
+    border-color: var(--first-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--first-color) 15%, transparent);
+  }
 }

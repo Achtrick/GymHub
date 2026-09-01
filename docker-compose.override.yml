@@ -13,7 +13,9 @@ services:
       - CHOKIDAR_USEPOLLING=true # file-watching reliability on Windows/WSL2
 
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+      target: dev # SDK stage with no baked-in ENTRYPOINT, so `command:` below actually runs
     ports:
       - "8080:8080"
     environment:

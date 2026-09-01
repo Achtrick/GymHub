@@ -5,6 +5,9 @@
 **/bin
 **/obj
 
+# User-uploaded PR videos (dev bind mount)
+backend/GymHub.Api/uploads
+
 # Build output
 **/dist
 

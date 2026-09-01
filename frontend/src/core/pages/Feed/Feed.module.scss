@@ -1,0 +1,257 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.empty {
+  color: var(--muted-color);
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: calc(var(--radius) * 1.2);
+  overflow: hidden;
+}
+
+.video {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  background-color: #000;
+}
+
+.body {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.lifter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-width: 0;
+  color: var(--second-color);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--first-color);
+  }
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.liftBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--first-color);
+  background-color: color-mix(in srgb, var(--first-color) 12%, transparent);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--second-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  &:hover {
+    opacity: 0.7;
+    background: transparent;
+  }
+
+  &:active {
+    transform: none;
+  }
+}
+
+.liked {
+  color: var(--first-color);
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.commentThread {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  font-size: 0.85rem;
+  line-height: 1.4;
+
+  strong {
+    font-weight: 600;
+    margin-right: 0.35rem;
+  }
+}
+
+.mention {
+  color: var(--first-color);
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.commentMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0.1rem 0 0.35rem;
+}
+
+.replyButton {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted-color);
+
+  &:hover {
+    color: var(--first-color);
+    background: transparent;
+  }
+
+  &:active {
+    transform: none;
+  }
+}
+
+.deleteButton {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted-color);
+
+  &:hover {
+    color: #e5484d;
+    background: transparent;
+  }
+
+  &:active {
+    transform: none;
+  }
+}
+
+.viewFullPost {
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--first-color);
+  margin-top: 0.15rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.reply {
+  display: flex;
+  flex-direction: column;
+  margin: 0.4rem 0 0.35rem 1.5rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--border-color);
+}
+
+.commentForm {
+  margin-top: 0.25rem;
+}
+
+.composer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.composerRow {
+  display: flex;
+  gap: 0.5rem;
+
+  button {
+    padding: 0.5rem 1rem;
+    flex-shrink: 0;
+  }
+}
+
+.replyingTo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--muted-color);
+  background-color: var(--bg-color);
+  border-radius: var(--radius);
+  padding: 0.35rem 0.6rem;
+
+  button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: var(--first-color);
+    font-weight: 600;
+    font-size: 0.75rem;
+
+    &:hover {
+      background: transparent;
+      opacity: 0.75;
+    }
+
+    &:active {
+      transform: none;
+    }
+  }
+}

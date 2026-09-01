@@ -1,0 +1,59 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(20, 24, 31, 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 100;
+
+  @media (min-width: 640px) {
+    align-items: center;
+  }
+}
+
+.modal {
+  width: 100%;
+  max-width: 440px;
+  max-height: 88vh;
+  overflow-y: auto;
+  background-color: var(--surface-color);
+  border-radius: calc(var(--radius) * 1.5) calc(var(--radius) * 1.5) 0 0;
+  padding: 1.5rem;
+
+  @media (min-width: 640px) {
+    border-radius: calc(var(--radius) * 1.5);
+    margin: 1.5rem;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+
+  h2 {
+    font-size: 1.15rem;
+  }
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--muted-color);
+  padding: 0.25rem;
+  border-radius: 999px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background-color: var(--bg-color);
+    opacity: 1;
+  }
+}

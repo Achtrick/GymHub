@@ -1,0 +1,175 @@
+.page {
+  padding: 1.25rem 1rem 2rem;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.empty {
+  color: var(--muted-color);
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filterField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  span {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--muted-color);
+  }
+
+  select {
+    min-width: 140px;
+  }
+}
+
+// The table needs roughly 700px to lay out its 8 columns without wrapping or
+// scrolling — below that, show cards instead of forcing horizontal scroll.
+$table-breakpoint: 700px;
+
+.tableWrap {
+  overflow-x: auto;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: calc(var(--radius) * 1.2);
+
+  @media (max-width: $table-breakpoint) {
+    display: none;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  white-space: nowrap;
+
+  th,
+  td {
+    text-align: left;
+    padding: 0.75rem 0.9rem;
+  }
+
+  th {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  tbody tr:not(:last-child) td {
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+.currentUserRow td {
+  background-color: color-mix(in srgb, var(--first-color) 8%, transparent);
+}
+
+.muted {
+  color: var(--muted-color);
+}
+
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--second-color);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--first-color);
+  }
+}
+
+.total {
+  font-weight: 700;
+  color: var(--first-color);
+}
+
+.cardList {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  @media (max-width: $table-breakpoint) {
+    display: flex;
+  }
+}
+
+.entryCard {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: calc(var(--radius) * 1.2);
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.currentUserCard {
+  border-color: var(--first-color);
+  background-color: color-mix(in srgb, var(--first-color) 6%, var(--surface-color));
+}
+
+.entryHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  .total {
+    margin-left: auto;
+    font-size: 1.05rem;
+  }
+}
+
+.rank {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted-color);
+}
+
+.entryName {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.entryStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  span {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted-color);
+  }
+
+  strong {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+}

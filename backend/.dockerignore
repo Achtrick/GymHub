@@ -3,3 +3,4 @@
 **/*.user
 **/.vs
 .env
+**/uploads
